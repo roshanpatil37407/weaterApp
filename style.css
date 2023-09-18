@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #000000;
+    text-align: center;
+    padding: 2em;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes particleMovement {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(calc(100% + 50px), calc(100% + 50px));
+    }
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: particleMovement 20s linear infinite;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    color: #ffffff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ;
+    animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% { color: #ffffff; }
+    50% { color: #E8AA42; }
+    100% { color: #ffffff; }
+}
+
+.units {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.panel {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    min-width: 15em;
+    height: 13em;
+    position: relative;
+    animation: cardScale 0.5s ease-in-out;
+    transform-origin: center center;
+}
+
+@keyframes cardScale {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.panel:nth-child(1) {
+    background: #116A7B;
+}
+
+.panel:nth-child(2) {
+    background: #5493a1;
+}
+
+.panel:nth-child(3) {
+    background: #116A7B;
+}
+
+.bg-unit {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10em;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.panel:nth-child(1) .bg-unit {
+    color: #1e7b8e;
+}
+
+.panel:nth-child(2) .bg-unit {
+    color: #6caaba;
+}
+
+.panel:nth-child(3) .bg-unit {
+    color: #1e7b8e;
+}
+
+.panel h2, .panel input {
+    position: relative;
+}
+
+.panel h2 {
+    text-align: left;
+    padding-left: 1em;
+    
+}
+
+.panel input::-webkit-outer-spin-button,
+   .panel input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.panel input {
+    border: none;
+    background: none;
+    margin-top: 0.5em;
+    width: 4em;
+    height: 2em;
+    font-size: 3em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+.panel input:focus {
+    outline: none;
+}

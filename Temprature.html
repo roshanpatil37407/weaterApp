@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Temperature Converter</h1>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="units">
+        <div class="panel">
+            <h1 class="bg-unit">°C</h1>
+            <h2>Celsius</h2>
+            <input type="number" id="celsius" value="0" />       
+        </div>
+        <div class="panel">
+            <h1 class="bg-unit">°F</h1>
+            <h2>Fahrenheit</h2>
+            <input type="number" id="fahrenheit" value="32" />       
+        </div>
+        <div class="panel">
+            <h1 class="bg-unit">°K</h1>
+            <h2>Kelvin</h2>
+            <input type="number" id="kelvin" value="273.15" />       
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const numParticles = 200; 
+
+        const body = document.querySelector('body');
+        const bodyWidth = body.offsetWidth;
+        const bodyHeight = body.offsetHeight;
+
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = getRandomPosition(bodyWidth) + 'px';
+            particle.style.top = getRandomPosition(bodyHeight) + 'px';
+            body.appendChild(particle);
+        }
+
+        function getRandomPosition(max) {
+            return Math.random() * max;
+        }
+    </script>
+</body>
+</html>
